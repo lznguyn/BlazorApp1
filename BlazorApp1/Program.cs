@@ -23,6 +23,9 @@ builder.Services.Configure<MongoDbConfig>(options =>
 // Register MongoDbContext as a singleton or scoped service
 builder.Services.AddSingleton<MongoDbContext>();
 
+// Register generic repository with scoped lifetime
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
