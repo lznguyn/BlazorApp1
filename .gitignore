@@ -1,0 +1,8 @@
+﻿# Ignore all DLL files
+*.dll
+
+# Ignore all files from bin and obj folders
+bin/
+obj/
+**/bin/
+**/obj/

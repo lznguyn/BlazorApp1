@@ -1,7 +1,8 @@
 using BlazorApp1.Components;
+using BlazorApp1.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using BlazorWebAppMovies.Data;
+using BlazorApp1.models;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContextFactory<BlazorWebAppMoviesContext>(options =>
@@ -10,6 +11,17 @@ builder.Services.AddDbContextFactory<BlazorWebAppMoviesContext>(options =>
 builder.Services.AddQuickGridEntityFrameworkAdapter();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+
+// Register MongoDbConfig using environment variables with IOptions
+builder.Services.Configure<MongoDbConfig>(options =>
+{
+    options.ConnectionString = Environment.GetEnvironmentVariable("MONGO_CONNECTION_STRING") ?? string.Empty;
+    options.DatabaseName = Environment.GetEnvironmentVariable("MONGO_DATABASE_NAME") ?? string.Empty;
+});
+
+// Register MongoDbContext as a singleton or scoped service
+builder.Services.AddSingleton<MongoDbContext>();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()

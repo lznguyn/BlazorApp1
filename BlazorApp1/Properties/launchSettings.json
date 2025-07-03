@@ -15,7 +15,9 @@
         "launchBrowser": true,
         "applicationUrl": "http://localhost:5226",
         "environmentVariables": {
-          "ASPNETCORE_ENVIRONMENT": "Development"
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "MONGO_CONNECTION_STRING": "mongodb://labmaymok02:dPu5FPQskTSYma@192.168.0.137:27004/?authMechanism=SCRAM-SHA-1",
+          "MONGO_DATABASE_NAME": "lznguyn"
         }
       },
       "https": {
@@ -24,14 +26,18 @@
         "launchBrowser": true,
         "applicationUrl": "https://localhost:7217;http://localhost:5226",
         "environmentVariables": {
-          "ASPNETCORE_ENVIRONMENT": "Development"
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "MONGO_CONNECTION_STRING": "mongodb://labmaymok02:dPu5FPQskTSYma@192.168.0.137:27004/?authMechanism=SCRAM-SHA-1",
+          "MONGO_DATABASE_NAME": "lznguyn"
         }
       },
       "IIS Express": {
         "commandName": "IISExpress",
         "launchBrowser": true,
         "environmentVariables": {
-          "ASPNETCORE_ENVIRONMENT": "Development"
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "MONGO_CONNECTION_STRING": "mongodb://labmaymok02:dPu5FPQskTSYma@192.168.0.137:27004/?authMechanism=SCRAM-SHA-1",
+          "MONGO_DATABASE_NAME": "lznguyn"
         }
       }
     }
